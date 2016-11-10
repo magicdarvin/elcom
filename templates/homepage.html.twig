@@ -19,9 +19,7 @@
   <span class="">Ship Communication & Navigation Equipment</span>
 </div>
 
-<div class="homepage-grid-wrapper">
-<div class="homepage-grid">
-<div class="row">
+<div class="row-fluid">
 {% set collection = page.evaluate([{'@page.children':'/services'}]) %}
 
 {% for p in collection %}
@@ -35,7 +33,6 @@
 </div>
 {% endfor %}
 
-</div>
 
   <!-- <div class="row">
     <div class="col-lg-2">
@@ -93,7 +90,6 @@
     </div>
   </div> -->
 
-</div>
 </div>
   <div class="homepage-cover-image">
     <div><img class="" src="{{ url('theme://images/cover-volvo.jpg') }}"></div>

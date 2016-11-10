@@ -288,43 +288,32 @@ Homepage
   }
 
 .homepage-grid-wrapper {
-  position: absolute;
+}
+.homepage-grid {
+  width: 1800px;
+  position: absolute;;
   bottom:0;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  max-width: 1400px;
-  overflow: scroll;
-
-}
-.homepage-grid {
-  width: 2000px;
-  bottom:0;
-
   margin-bottom: 22px;
+  /*max-width: 1400px;*/
   max-height: 232px;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  overflow: scroll;
+  
 
 }
 
 @media (min-width: 1200px) {
   .homepage-grid {
-    /*max-width: 1200px;*/
+    max-width: 1200px;
   }
 }
 
 .homepage-grid .col-lg-2 {
   padding-right: 2.5px;
   padding-left: 2.5px;
-}
-
-.homepage-grid .col-md-4 {
-  padding-right: 2.5px;
-  padding-left: 2.5px;
-  width: 300px;
 }
 
 .homepage-grid .cell {
