@@ -288,7 +288,7 @@ Homepage
   }
 
 .homepage-grid {
-  width: 2000px;
+  width: 98%;
   position: absolute;;
   bottom:0;
   left: 0;
@@ -296,9 +296,7 @@ Homepage
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 22px;
-  max-height: 232px;
-  overflow: scroll;
-  white-space : nowrap;
+  max-width: 1400px;
 }
 
 @media (min-width: 1200px) {
@@ -310,16 +308,7 @@ Homepage
 .homepage-grid .col-lg-2 {
   padding-right: 2.5px;
   padding-left: 2.5px;
-  display : inline-block;
-
 }
-.homepage-grid .col-md-4 {
-  padding-right: 2.5px;
-  padding-left: 2.5px;
-  display : inline-block;
-
-}
-
 
 .homepage-grid .cell {
   font-family: 'Roboto', sans-serif;
@@ -347,7 +336,11 @@ Homepage
 
 
 .homepage-grid .cell p {
-
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .search-wrapper {
