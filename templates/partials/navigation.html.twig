@@ -30,8 +30,10 @@
             {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
             <li class="{{ current_page }}">
                 <a href="{{ page.url }}">
-                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
+                    {% if page.header.icon %}<i class="home-icon glyphicon glyphicon-{{ page.header.icon }}"></i>
+                    {% else %}
                     {{ page.menu }}
+                    {% endif %}
                 </a>
             </li>
         {% endfor %}
@@ -44,4 +46,4 @@
             </a>
         </li>
     {% endfor %} -->
-</ul>
+  </ul>

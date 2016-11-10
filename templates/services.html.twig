@@ -1,17 +1,18 @@
 {% extends 'partials/base.html.twig' %}
-{% block content %}
-    {{ page.content }}
 
+{% block content %}
+<div class="container main-content">
 <div id="service-list" class="col-lg-4 col-md-4">
+  <ul>
 {% for p in page.children() %}
-<a href="{{ p.link }}" alt="{{ p.title }}">{{ p.title }}</a>
+    <li><a href="{{ p.link }}" alt="{{ p.title }}">{{ p.title }}</a></li>
 {% endfor %}
+  </ul>
 </div>
 
 <div class="col-lg-8 col-md-8">
-{% for p in page.children() %}
-{{ p.summary }}
-{% endfor %}
+  {{ page.content }}
 </div>
 
+</div>
 {% endblock %}

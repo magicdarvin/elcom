@@ -12,6 +12,13 @@
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700&amp;subset=cyrillic" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+
 
     {% block stylesheets %}
         {% do assets.addCss('theme://css/bootstrap.min.css', 100) %}
@@ -33,17 +40,24 @@
 
 {% block header %}
     <div class="header">
-        <div class="container-fluid">
-
+        <div class="container-fluid" id="top-numbers">
+          <div class="container">
+            <ul>
+              <li><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> +38(0629)41-35-07</li>
+              <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> +38(050)594-83-15</li>
+              <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Обратная связь</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-fluid navbar-placeholder">
+        <div data-spy="affix" data-offset-top="26" class="container-fluid navbar-sticky">
             {% block header_navigation %}
             <nav class="navbar">
               <div class="container">
               <div class="navbar-header">
-                <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
-                    {{ config.site.title }}
-                </a>
-                <h2>{{ config.site.subtitle }}</h2>
-                <a href="http://169.254.109.50:8888/Capitan.zip">Capitan</a>
+                  <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
+                    <img src="{{ url('theme://images/elcom.png') }}" alt="{{ config.site.title }}">
+                  </a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
@@ -52,36 +66,90 @@
                 </button>
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                {% include 'partials/navigation.html.twig' %}
-              </div>
-              </div>
+                <div class="navigation-grouped">
+                  {% include 'partials/navigation.html.twig' %}
+                  <ul class="navbar-language navbar-right">
+                    <li><a href="http://127.0.0.1:8888/ua" alt="Ukrainian"><img src="{{ url('theme://images/flags/ukraine.png') }}"></a></li>
+                    <li><a href="http://127.0.0.1:8888/ru" alt="Russian"><img src="{{ url('theme://images/flags/russia.png') }}"></a></li>
+                    <li><a href="http://127.0.0.1:8888/en" alt="English"><img src="{{ url('theme://images/flags/united-states.png') }}"></a></li>
+                  </ul>
+                  <ul class="navbar-phone navbar-right">
+                  <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> +38(050)594-83-15</li>
+                  </ul>
+                  <form class="navbar-form navbar-right">{% include 'partials/simplesearch_searchbox.html.twig' %}</form>
 
+                </div>
+              </div>
+              </div>
             </nav>
-            {% include 'partials/langswitcher.html.twig' %}
-            {% include 'partials/breadcrumbs.html.twig' %}
-
             {% endblock %}
         </div>
     </div>
+  </div>
 {% endblock %}
 
 {% block body %}
     <section id="body">
-        <div class="container">
+        <div class="container-fluid">
         {% block content %}{% endblock %}
         </div>
     </section>
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-        </div>
+    <div class="footer container-fluid text-center">
+      <div class="footer-menu">
+        <ul>
+            {% if theme_config.dropdown.enabled %}
+                {{ _self.loop(pages) }}
+            {% else %}
+                {% for page in pages.children.visible %}
+                    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                    <li class="{{ current_page }}">
+                        <a href="{{ page.url }}">
+                            {{ page.menu }}
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+
+          </ul>      </div>
+      <div>
+      <p><strong>Certified Agent</strong></p>
+      <ul>
+        <li><a href="http://furuno.com" target="_blank"><img style="height:10px;" src="{{ url('theme://images/logos/furuno.png') }}"></a></li>
+        <li><a href="https://www.kelvinhughes.com" target="_blank"><img style="height:40px;" src="{{ url('theme://images/logos/kelvin_h.png') }}"></a></li>
+        <li><a href="http://www.jotron.com" target="_blank"><img style="height:30px;" src="{{ url('theme://images/logos/jotron.png') }}"></a></li>
+        <li><a href="http://www.cobham.com/" target="_blank" ><img style="height:40px;" src="{{ url('theme://images/logos/sailor.png') }}"></a></li>
+      </ul>
+    </div>
+      <div class="footer-copyright">© Copyright 2000-2016 Elcom Ltd. All Rights Reserved</div>
+      <div class="footer-name-address">
+        <ul>
+        <li>Elcom Ltd.</li>
+        <li>87517, Ukraine, Mariupol, Krasnomayakskaya-Str. 2</li>
+      </ul>
+      </div>
     </div>
 {% endblock %}
 
 {% block bottom %}
     {{ assets.js('bottom') }}
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script>$(".homepage-cover-image").slick({
+      accessibility: false,
+      draggable: false,
+      swipe: false,
+      touchMove: false,
+
+      autoplay: true,
+      arrows: false,
+      autoplaySpeed: 4000,
+      fade: true,
+      speed: 800
+
+
+    });</script>
 {% endblock %}
 
 </body>

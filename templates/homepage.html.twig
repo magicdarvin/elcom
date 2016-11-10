@@ -1,0 +1,104 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="certified-agent">
+  <div class="container">
+  <ul>
+    <li>Certified Agent</li>
+    <li><a href="http://furuno.com" target="_blank"><img style="height:14px;" src="{{ url('theme://images/logos/furuno.png') }}"></a></li>
+    <li><a href="https://www.kelvinhughes.com" target="_blank"><img style="height:56px;" src="{{ url('theme://images/logos/kelvin_h.png') }}"></a></li>
+    <li><a href="http://www.jotron.com" target="_blank"><img style="height:42px;" src="{{ url('theme://images/logos/jotron.png') }}"></a></li>
+    <li><a href="http://www.cobham.com/" target="_blank"><img style="height:54px;" src="{{ url('theme://images/logos/sailor.png') }}"></a></li>
+
+  </ul>
+</div>
+</div>
+
+<div class="homepage-vertical">
+<div class="homepage-center-title text-center animated fadeInUp">
+  <span class="">Ship Communication & Navigation Equipment</span>
+</div>
+
+<div class="homepage-grid-wrapper">
+<div class="homepage-grid">
+<div class="row">
+{% set collection = page.evaluate([{'@page.children':'/services'}]) %}
+
+{% for p in collection %}
+
+<div class="col-lg-2 col-md-4 col-sm-4">
+  <a href="{{ p.link }}" alt="{{ p.title }}">
+  <div class="cell hvr-grow-shadow hvr-fade">
+    <p>{{ p.title }}</p>
+  </div>
+</a>
+</div>
+{% endfor %}
+
+</div>
+
+  <!-- <div class="row">
+    <div class="col-lg-2">
+      <div class="cell hvr-grow-shadow hvr-fade">
+        <p><a href="#">Поставка и реализация оборудования ГМССБ, средств связи и электрорадионавигационного оборудования</a></p>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="cell">
+        <p>Разработка проектно-конструкторской документации при ремонте судов</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Техническая экспертиза судов и других плавучих средств</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Оказание консалтинговых услуг</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Монтаж средств связи и электрорадионавигационного оборудования ГМССБ</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Пусконаладочные работы на оборудовании связи, электронавигации, ГМССБ</p>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="row">
+    <div class="col-lg-2">
+      <div class="cell">
+        <p>Комиссионные испытания аппаратуры ГМССБ и систем спутниковой связи</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell hvr-fade">
+        <p>Гарантийное и сервисное обслуживание радио- и радионавигационного оборудования</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Береговое техническое обслуживание оборудования ГМССБ</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Комплексная проверка и программирование оборудования ГМССБ</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Комплексная проверка и программирование аварийных радиобуев КОСПАС/САРСАТ</p>
+      </div>
+    </div><div class="col-lg-2">
+      <div class="cell">
+        <p>Ремонт и модернизация средств связи и навигационного оборудования</p>
+      </div>
+    </div>
+  </div> -->
+
+</div>
+</div>
+  <div class="homepage-cover-image">
+    <div><img class="" src="{{ url('theme://images/cover-volvo.jpg') }}"></div>
+    <div><img class="" src="{{ url('theme://images/cover-hughes.jpg') }}"></div>
+      <div><img class="" src="{{ url('theme://images/cover-furuno.jpg') }}"></div>
+  </div>
+</div>
+{% endblock %}

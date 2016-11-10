@@ -1,0 +1,23 @@
+<div class="form-group form-group-sm has-feedback">
+    <input class="search-input form-control" type="text" placeholder="{{"PLUGIN_SIMPLESEARCH.SEARCH_PLACEHOLDER"|t}}" value="{{ query }}" data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query" />
+<i class="glyphicon glyphicon-search form-control-feedback"></i>
+    <!-- {% if config.plugins.simplesearch.display_button %}
+        <button type="submit" class="search-submit btn btn-sm glyphicon glyphicon-search"></button>
+    {% endif %} -->
+    <script>
+    jQuery(document).ready(function($){
+        $('.search-input').on('keypress', function(event) {
+            var input = $(event.currentTarget);
+            if (event.which == 13 && input.val().length >= {{ config.get('plugins.simplesearch.min_query_length', 3) }}) {
+                event.preventDefault();
+                window.location.href = input.data('search-input') + '{{ config.system.param_sep }}' + input.val();
+            }
+        });
+        $('.search-submit').on('click', function(event) {
+            var input = $(event.currentTarget).prev('.search-input');
+            event.preventDefault();
+            window.location.href = input.data('search-input') + '{{ config.system.param_sep }}' + input.val();
+        });
+    });
+    </script>
+</div>
