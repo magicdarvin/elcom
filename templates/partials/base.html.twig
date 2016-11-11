@@ -68,11 +68,7 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="navigation-grouped">
                   {% include 'partials/navigation.html.twig' %}
-                  <ul class="navbar-language navbar-right">
-                    <li><a href="http://127.0.0.1:8888/ua" alt="Ukrainian"><img src="{{ url('theme://images/flags/ukraine.png') }}"></a></li>
-                    <li><a href="http://127.0.0.1:8888/ru" alt="Russian"><img src="{{ url('theme://images/flags/russia.png') }}"></a></li>
-                    <li><a href="http://127.0.0.1:8888/en" alt="English"><img src="{{ url('theme://images/flags/united-states.png') }}"></a></li>
-                  </ul>
+                  {% include 'partials/langswitcher.html.twig' %}
                   <ul class="navbar-phone navbar-right">
                   <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> +38(050)594-83-15</li>
                   </ul>
