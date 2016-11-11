@@ -18,12 +18,14 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.12/slideout.min.js"></script> -->
+
 
 
     {% block stylesheets %}
         {% do assets.addCss('theme://css/bootstrap.min.css', 100) %}
         {% do assets.addCss('theme://css/bootstrap-theme.min.css', 100) %}
-        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
+        <!-- {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %} -->
         {% do assets.addCss('theme://css/custom.css', 98) %}
     {% endblock %}
     {{ assets.css() }}
@@ -39,6 +41,7 @@
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
+
     <div class="header">
         <div class="container-fluid" id="top-numbers">
           <div class="container">
@@ -78,6 +81,7 @@
               </div>
               </div>
             </nav>
+
             {% endblock %}
         </div>
     </div>
@@ -127,6 +131,7 @@
       </ul>
       </div>
     </div>
+  <!-- </main> -->
 {% endblock %}
 
 {% block bottom %}
@@ -165,18 +170,29 @@
 
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        dots: true
+        slidesToShow: 1,
+        slidesToScroll: 1
       }
 
     }, {
 
       breakpoint: 300,
-      settings: "unslick" // destroys slick
 
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
     }]
 
     });</script>
+    <!-- <script>
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+  });
+</script> -->
 {% endblock %}
 
 </body>

@@ -9,12 +9,21 @@ body {
 /*
 Top bar
 */
+
+
 #top-numbers {
   font-family: 'Roboto', sans-serif;
   color: #333333;
   font-weight: 500;
   height:24px;
   background-color: #F0F0F0;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #top-numbers {
+      display: block;
+  }
 }
 
 #top-numbers ul {
@@ -234,6 +243,13 @@ Navigation
   list-style: none;
 }
 
+.navbar-toggle {
+  margin: 0;
+  margin-top: 22px;
+  float: right;
+
+}
+
 
 /*.langswitcher {
   top: 0 !important;
@@ -262,7 +278,14 @@ Homepage
   background: rgba(255, 255, 255, 0.65);
   position: absolute;
   z-index: 1 !important;
+  display: none;
 
+}
+
+@media (min-width: 992px) {
+  .certified-agent {
+      display: block;
+  }
 }
 
 .certified-agent ul {
@@ -285,9 +308,10 @@ Homepage
 }
 
 .homepage-cover-image {
-
-  /*position: relative;*/
   z-index: -999;
+  overflow: visible;
+  margin-top: -76px;
+
 
 }
 
@@ -295,16 +319,17 @@ Homepage
   width: 100%;
   object-fit: cover;
   height: 100vh;
-  margin-top: -76px;
-
 }
 
 .homepage-cover-image div {
   display: none;
+
+
 }
 
 .homepage-cover-image div:first-child {
-  display: block;
+    display: block;
+
 }
 
 .homepage-center-title {
@@ -315,7 +340,7 @@ Homepage
   color:white;
   width: 100%;
   text-shadow: 0px 2px 4px #000000;
-  top:30%;
+  top:40%;
   }
 
 .homepage-grid {
@@ -564,4 +589,76 @@ Effects
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
   background-color:rgba(115, 48, 73, 0.95);
   color: white;
+}
+
+@media (max-width: 992px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}
+
+/* fix iOS bug not displaying 100vh correctly */
+/* ipad */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	.homepage-cover-image img {
+		height: 768px;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	.homepage-cover-image img {
+		height: 1024px;
+	}
+}
+/* iphone5 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {
+	.homepage-cover-image img {
+		height: 320px;
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) {
+	.homepage-cover-image img {
+		height: 568px;
+	}
+}
+/* iPhone 4 */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+	.homepage-cover-image img {
+		height: 320px;
+	}
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+	.homepage-cover-image img {
+		height: 480px;
+	}
 }
