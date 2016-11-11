@@ -18,23 +18,30 @@
 <div class="homepage-center-title text-center animated fadeInUp">
   <span class="">Ship Communication & Navigation Equipment</span>
 </div>
-
+<div class="homepage-grid-wrapper">
 <div class="homepage-grid">
-<div class="row">
 {% set collection = page.evaluate([{'@page.children':'/services'}]) %}
 
-{% for p in collection %}
+{% for p in collection|batch(2) %}
+<div class="row">
+ {% for item in p %}
+ <div class="row">
 
-<div class="col-lg-2 col-md-4 col-sm-4">
-  <a href="{{ p.link }}" alt="{{ p.title }}">
-  <div class="cell hvr-grow-shadow hvr-fade">
-    <p>{{ p.title }}</p>
+<div class="cell-padding">
+  <a href="{{ item.link }}" alt="{{ item.title }}">
+  <div class="cell hvr-fade">
+    <p>{{ item.title }}</p>
   </div>
 </a>
 </div>
+</div>
+
 {% endfor %}
 
 </div>
+
+{% endfor %}
+
 
   <!-- <div class="row">
     <div class="col-lg-2">
@@ -92,6 +99,7 @@
     </div>
   </div> -->
 
+</div>
 </div>
   <div class="homepage-cover-image">
     <div><img class="" src="{{ url('theme://images/cover-volvo.jpg') }}"></div>

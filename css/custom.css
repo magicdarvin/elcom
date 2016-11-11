@@ -121,18 +121,19 @@ Navigation
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
-  margin-left: 95px;
+  margin-left: 45px;
 
   -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
 
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .navbar-nav {
-    margin-left: 45px;
+    margin-left: 95px;
   }
 }
+
 
 .navbar-nav>li>a {
   color: #FFFFFF;
@@ -288,7 +289,11 @@ Homepage
   }
 
 .homepage-grid {
-  width: 98%;
+
+
+}
+
+.homepage-grid-wrapper {
   position: absolute;;
   bottom:0;
   left: 0;
@@ -296,7 +301,23 @@ Homepage
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 22px;
-  max-width: 1400px;
+  width: 90%;
+
+}
+
+@media (min-width: 1200px) {
+  .homepage-grid-wrapper {
+    width: 1200px;
+
+  }
+}
+
+.homepage-grid .row {
+
+}
+
+.cell-padding {
+  padding: 0 2.5px;
 }
 
 @media (min-width: 1200px) {

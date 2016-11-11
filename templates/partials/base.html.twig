@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:500,700&amp;subset=cyrillic" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
@@ -148,6 +148,37 @@
       fade: true,
       speed: 800
 
+
+    });</script>
+    <script>$(".homepage-grid").slick({
+
+      slidesToShow: 6,
+      slidesToScroll: 6,
+      arrows: true,
+
+      responsive: [{
+
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: false
+      }
+
+    }, {
+
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        dots: true
+      }
+
+    }, {
+
+      breakpoint: 300,
+      settings: "unslick" // destroys slick
+
+    }]
 
     });</script>
 {% endblock %}
