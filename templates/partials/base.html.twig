@@ -98,7 +98,7 @@
 
 {% block footer %}
     <div class="footer container-fluid text-center">
-      <div class="footer-menu">
+      <div class="footer-menu hidden-xs">
         <ul>
             {% if theme_config.dropdown.enabled %}
                 {{ _self.loop(pages) }}
@@ -156,6 +156,8 @@
       slidesToShow: 6,
       slidesToScroll: 6,
       arrows: true,
+      appendArrows: $(".homepage-grid-wrapper"),
+      rows: 2,
 
       responsive: [{
 
@@ -176,7 +178,7 @@
 
     }, {
 
-      breakpoint: 300,
+      breakpoint: 460,
 
       settings: {
         slidesToShow: 1,

@@ -1,5 +1,5 @@
 body {
-
+background: #F0F0F0;
 }
 
 .container-fluid {
@@ -97,6 +97,10 @@ Navigation
    transition: all 0.4s ease;
 }
 
+.collapse.in {
+  background: rgb(48, 64, 115);
+}
+
 .navbar-header {
   height: 76px;
 }
@@ -137,10 +141,15 @@ Navigation
 }
 
 
+
 @media (min-width: 1200px) {
   .navbar-nav {
     margin-left: 95px;
   }
+}
+
+@media (min-width: 750px) {
+
 }
 
 .icon-bar {
@@ -334,7 +343,7 @@ Homepage
 
 .homepage-center-title {
   font-family: 'Roboto', sans-serif;
-  font-size: 42px;
+    font-size: 42px;
   font-weight: 500;
   position: absolute;;
   color:white;
@@ -342,10 +351,6 @@ Homepage
   text-shadow: 0px 2px 4px #000000;
   top:40%;
   }
-
-.homepage-grid {
-
-}
 
 .homepage-grid-wrapper {
   position: absolute;;
@@ -356,8 +361,7 @@ Homepage
   margin-right: auto;
   margin-bottom: 22px;
   width: 90%;
-
-
+  text-align: center;
 }
 
 @media (min-width: 1200px) {
@@ -368,12 +372,49 @@ Homepage
 }
 
 .homepage-grid {
-height: 232px;
+height: 237px;
+padding-top: 5px;
 overflow: scroll;
+}
+
+.homepage-grid:hover {
+  box-shadow: 1px 1px 4px 0 #222222, -1px -1px 4px 0 #222222;
+}
+
+.homepage-grid:hover .cell {
+  background: rgba(48, 64, 115, 0.20);
+  color: rgba(255, 255, 255, 0.30);
+  box-shadow: 0 0 4px 0 #222222;
+}
+
+.homepage-grid-wrapper a:hover .homepage-more {
+  visibility: visible;
+}
+
+
+.homepage-more {
+  visibility: hidden;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  pointer-events:none;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-shadow: 0px 2px 4px #000000;
+  z-index: 2;
+  top: 89px;
 }
 
 .homepage-grid.slick-initialized {
   overflow: visible;
+
+}
+
+.slick-slide, .slick-current, .slick-active {
+  pointer-events:none;
 }
 
 .cell-padding {
@@ -403,6 +444,9 @@ overflow: scroll;
   padding: 5px;
   box-shadow: 1px 1px 4px 0 #222222;
   width: 100%;
+
+  -webkit-transition: color,box-shadow,background 0.4s ease;
+   transition: color,box-shadow,background 0.4s ease;
 
 }
 
@@ -575,12 +619,10 @@ Effects
 }
 
 .hvr-fade {
-  display: inline-block;
-  vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
-  overflow: hidden;
+  overflow: auto;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
   -webkit-transition-property: color, background-color;
