@@ -18,35 +18,14 @@
 <div class="homepage-center-title text-center animated fadeInUp">
   <span class="">Ship Communication & Navigation Equipment</span>
 </div>
+
 <div class="homepage-grid-wrapper">
-<div class="homepage-grid">
-{% set collection = page.evaluate([{'@page.children':'/services'}]) %}
-
-{% for p in collection|batch(2) %}
-<div class="row">
- {% for item in p %}
- <div class="row">
-
-<div class="cell-padding">
-  <a href="{{ item.link }}" alt="{{ item.title }}">
-  <div class="cell hvr-fade">
-    <p>{{ item.title }}</p>
-  </div>
-</a>
-</div>
-</div>
-
-{% endfor %}
-
-</div>
-
-{% endfor %}
-
-
-  <!-- <div class="row">
+  <a href="{{ base_url }}/services">
+    <div class="homepage-more">Подробнее</div>
+<div class="homepage-grid hvr-fade">
     <div class="col-lg-2">
-      <div class="cell hvr-grow-shadow hvr-fade">
-        <p><a href="#">Поставка и реализация оборудования ГМССБ, средств связи и электрорадионавигационного оборудования</a></p>
+      <div class="cell">
+        <p>Поставка и реализация оборудования ГМССБ, средств связи и электрорадионавигационного оборудования</p>
       </div>
     </div>
     <div class="col-lg-2">
@@ -70,14 +49,13 @@
         <p>Пусконаладочные работы на оборудовании связи, электронавигации, ГМССБ</p>
       </div>
     </div>
-  </div> -->
-  <!-- <div class="row">
+
     <div class="col-lg-2">
       <div class="cell">
         <p>Комиссионные испытания аппаратуры ГМССБ и систем спутниковой связи</p>
       </div>
     </div><div class="col-lg-2">
-      <div class="cell hvr-fade">
+      <div class="cell">
         <p>Гарантийное и сервисное обслуживание радио- и радионавигационного оборудования</p>
       </div>
     </div><div class="col-lg-2">
@@ -92,15 +70,16 @@
       <div class="cell">
         <p>Комплексная проверка и программирование аварийных радиобуев КОСПАС/САРСАТ</p>
       </div>
-    </div><div class="col-lg-2">
+    </div>
+    <div class="col-lg-2">
       <div class="cell">
         <p>Ремонт и модернизация средств связи и навигационного оборудования</p>
       </div>
     </div>
-  </div> -->
+</div>
+</a>
+</div>
 
-</div>
-</div>
   <div class="homepage-cover-image">
     <div><img class="" src="{{ url('theme://images/cover-volvo.jpg') }}"></div>
     <div><img class="" src="{{ url('theme://images/cover-hughes.jpg') }}"></div>
