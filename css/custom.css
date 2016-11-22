@@ -510,7 +510,7 @@ overflow: scroll;
   overflow: visible;
 }
 
-.slick-slide, .slick-current, .slick-active {
+.homepage-grid .slick-slide, .slick-current, .slick-active {
   pointer-events:none;
 }
 

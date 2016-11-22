@@ -17,6 +17,7 @@ ru:
     BOX10: Береговое техническое обслуживание оборудования ГМССБ
     BOX11: Комиссионные испытания аппаратуры ГМССБ и систем спутниковой связи
     BOX12: Гарантийное и сервисное обслуживание радио- и радионавигационного оборудования
+    MORE: Подробнее
   BOTTOM:
     NAME: ООО «Элком»
     ADDRESS: 87517, Украина, Мариуполь, ул. Красномаякская, д.2
@@ -40,6 +41,7 @@ en:
     BOX10: Coastal GMDSS maintenance services of the equipment
     BOX11: Commisioned testings of GMDSS equipment and satellite communication systems
     BOX12: Сonsulting services
+    MORE: More
   BOTTOM:
     NAME: Elcom Ltd.
     ADDRESS: 87517, Ukraine, Mariupol, Krasnomayakskaya Str. 2
@@ -64,6 +66,7 @@ ua:
     BOX10: Берегове технічне обслуговування обладнання ГМЗЛБ
     BOX11: Комісійні випробування апаратури ГМЗЛБ і систем супутникового зв'язку
     BOX12: Гарантійне і сервісне обслуговування радіо- і радіонавігаційного обладнання
+    MORE: Детальніше
   BOTTOM:
     NAME: ООО «Елком»
     ADDRESS: 87517, Україна, Маріуполь, вул. Червономаяцька, д.2
