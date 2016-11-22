@@ -12,21 +12,14 @@
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700&amp;subset=cyrillic" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.12/slideout.min.js"></script> -->
-
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto:500,700&amp;subset=cyrillic" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
 
 
     {% block stylesheets %}
+        {% do assets.addCss('theme://css/animate.css', 100) %}
         {% do assets.addCss('theme://css/bootstrap.min.css', 100) %}
-        {% do assets.addCss('theme://css/bootstrap-theme.min.css', 100) %}
-        <!-- {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %} -->
-        {% do assets.addCss('theme://css/custom.css', 98) %}
+        {% do assets.addCss('theme://css/custom.css', 100) %}
     {% endblock %}
     {{ assets.css() }}
 
@@ -48,12 +41,12 @@
             <ul>
               <li><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> +38(0629)41-35-07</li>
               <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> +38(050)594-83-15</li>
-              <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Обратная связь</li>
+              <li><a href="mailto:elcom@mp.farlep.net"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{ "TOP.MAILUS"|t }}</a></li>
             </ul>
           </div>
         </div>
         <div class="container-fluid navbar-placeholder">
-        <div data-spy="affix" data-offset-top="26" class="container-fluid navbar-sticky">
+        <div data-spy="affix" data-offset-top="24" class="container-fluid navbar-sticky">
             {% block header_navigation %}
             <nav class="navbar">
               <div class="container">
@@ -75,7 +68,7 @@
                   <ul class="navbar-phone navbar-right">
                   <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> +38(050)594-83-15</li>
                   </ul>
-                  <form class="navbar-form navbar-right">{% include 'partials/simplesearch_searchbox.html.twig' %}</form>
+                  <form class="navbar-form navbar-right hidden-xs hidden-sm">{% include 'partials/simplesearch_searchbox.html.twig' %}</form>
 
                 </div>
               </div>
@@ -90,15 +83,13 @@
 
 {% block body %}
     <section id="body">
-        <div class="container-fluid">
         {% block content %}{% endblock %}
-        </div>
     </section>
 {% endblock %}
 
 {% block footer %}
     <div class="footer container-fluid text-center">
-      <div class="footer-menu hidden-xs">
+      <div class="footer-menu hidden-xs hidden-sm">
         <ul>
             {% if theme_config.dropdown.enabled %}
                 {{ _self.loop(pages) }}
@@ -113,21 +104,31 @@
                 {% endfor %}
             {% endif %}
 
-          </ul>      </div>
+          </ul>
+        </div>
+      <div class="footer-menu visible-xs visible-sm">
+        <ul>
+          <li><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> +38(0629)41-35-07</li>
+          <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> +38(050)594-83-15</li>
+          <div class="clearfix hidden-sm"></div>
+          <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Обратная связь</li>
+        </ul>
+      </div>
       <div>
       <p><strong>Certified Agent</strong></p>
       <ul>
         <li><a href="http://furuno.com" target="_blank"><img style="height:10px;" src="{{ url('theme://images/logos/furuno.png') }}"></a></li>
         <li><a href="https://www.kelvinhughes.com" target="_blank"><img style="height:40px;" src="{{ url('theme://images/logos/kelvin_h.png') }}"></a></li>
+        <div class="clearfix visible-xs"></div>
         <li><a href="http://www.jotron.com" target="_blank"><img style="height:30px;" src="{{ url('theme://images/logos/jotron.png') }}"></a></li>
         <li><a href="http://www.cobham.com/" target="_blank" ><img style="height:40px;" src="{{ url('theme://images/logos/sailor.png') }}"></a></li>
       </ul>
     </div>
-      <div class="footer-copyright">© Copyright 2000-2016 Elcom Ltd. All Rights Reserved</div>
+      <div class="footer-copyright">© Copyright Elcom Ltd. All Rights Reserved</div>
       <div class="footer-name-address">
         <ul>
-        <li>Elcom Ltd.</li>
-        <li>87517, Ukraine, Mariupol, Krasnomayakskaya-Str. 2</li>
+        <li>{{ "BOTTOM.NAME"|t}}</li>
+        <li>{{ "BOTTOM.ADDRESS"|t}}</li>
       </ul>
       </div>
     </div>
@@ -136,65 +137,6 @@
 
 {% block bottom %}
     {{ assets.js('bottom') }}
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-    <script>$(".homepage-cover-image").slick({
-      accessibility: false,
-      draggable: false,
-      swipe: false,
-      touchMove: false,
-
-      autoplay: true,
-      arrows: false,
-      autoplaySpeed: 4000,
-      fade: true,
-      speed: 800
-
-
-    });</script>
-    <script>$(".homepage-grid").slick({
-
-      slidesToShow: 6,
-      slidesToScroll: 6,
-      arrows: true,
-      appendArrows: $(".homepage-grid-wrapper"),
-      rows: 2,
-
-      responsive: [{
-
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: false
-      }
-
-    }, {
-
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-
-    }, {
-
-      breakpoint: 460,
-
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
-
-    });</script>
-    <!-- <script>
-  var slideout = new Slideout({
-    'panel': document.getElementById('panel'),
-    'menu': document.getElementById('menu'),
-    'padding': 256,
-    'tolerance': 70
-  });
-</script> -->
 {% endblock %}
 
 </body>

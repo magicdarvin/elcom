@@ -1,0 +1,19 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="container-fluid body-content">
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBZ-1Y2UOq6gJ6MfKLMnFWrozYxwt5b5Lc'></script>
+<div style='overflow:hidden;height:350px;width:100%;'><div id='gmap_canvas' style='height:350px;width:100%;'></div>
+<style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+<a href='https://embed-map.org/'>adding google maps to website</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=87d77b9eb26f042839c88248ecb0136b2003c5ee'></script>
+<script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(47.0671575,37.50780800000007),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(47.0671575,37.50780800000007)});infowindow = new google.maps.InfoWindow({content:'<strong>Elcom Ltd.</strong><br>ул. Красномаякская 2<br> Мариуполь<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+<div class="container main-content">
+
+<div class="col-lg-8 col-md-8 col-md-push-2 col-lg-push-2">
+  {{ page.content }}
+</div>
+
+</div>
+</div>
+{% endblock %}
