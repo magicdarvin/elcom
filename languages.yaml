@@ -1,0 +1,69 @@
+ru:
+  TOP:
+    MAILUS: Обратная связь
+    CERTIFIEDAGENT: Certified Agent
+  TITLE:
+    CENTERED: Судовое оборудование связи и навигации
+  BOXES:
+    BOX1: Поставка и реализация оборудования ГМССБ, средств связи и электрорадионавигационного оборудования
+    BOX2: Оказание консалтинговых услуг
+    BOX3: Техническая экспертиза судов и других плавучих средств
+    BOX4: Разработка проектно-конструкторской документации при ремонте судов
+    BOX5: Комплексная проверка и программирование аварийных радиобуев КОСПАС/САРСАТ
+    BOX6: Комплексная проверка и программирование оборудования ГМССБ
+    BOX7: Монтаж средств связи и электрорадионавигационного оборудования ГМССБ
+    BOX8: Ремонт и модернизация средств связи и навигационного оборудования
+    BOX9: Пусконаладочные работы на оборудовании связи, электронавигации, ГМССБ
+    BOX10: Береговое техническое обслуживание оборудования ГМССБ
+    BOX11: Комиссионные испытания аппаратуры ГМССБ и систем спутниковой связи
+    BOX12: Гарантийное и сервисное обслуживание радио- и радионавигационного оборудования
+  BOTTOM:
+    NAME: ООО «Элком»
+    ADDRESS: 87517, Украина, Мариуполь, ул. Красномаякская, д.2
+
+en:
+  TOP:
+    MAILUS: Mail us
+    CERTIFIEDAGENT: Certified Agent
+  TITLE:
+    CENTERED: Ship Communication & Navigation Equipment
+  BOXES:
+    BOX1: Distribution and delivery of GMDSS, communication and electroradionavigation equipment
+    BOX2: Warranty services and maintanance for radio and navigation equipment
+    BOX3: Comprehensive testing and programming of emergency beacons COSPAS / SARSAT
+    BOX4: Project documentation development for doing repairs on vessels
+    BOX5: Technical expertise for ships and other vessels
+    BOX6: Comprehensive testing and programming of GMDSS equipment
+    BOX7: Installation of communication and GMDSS equipment and electronavigation
+    BOX8: Repair and modernization of communication and navigation equipment
+    BOX9: Launching and setup works on communication equipment, electronavigation, GMDSS
+    BOX10: Coastal GMDSS maintenance services of the equipment
+    BOX11: Commisioned testings of GMDSS equipment and satellite communication systems
+    BOX12: Сonsulting services
+  BOTTOM:
+    NAME: Elcom Ltd.
+    ADDRESS: 87517, Ukraine, Mariupol, Krasnomayakskaya Str. 2
+
+
+ua:
+  TOP:
+    MAILUS: Зворотній зв'язок
+    CERTIFIEDAGENT: Certified Agent
+  TITLE:
+    CENTERED: Суднове обладнання зв'язку та навігації
+  BOXES:
+    BOX1: Поставка і реалізація ГМЗЛБ, засобів зв'язку і електрорадіонавігаційного обладнання
+    BOX2: Надання консалтингових послуг
+    BOX3: Технічна експертиза суден та інших плавучих засобів
+    BOX4: Розробка проектно-конструкторської документації при ремонті суден
+    BOX5: Комплексна перевірка і програмування аварійних радіобуїв КОСПАС/САРСАТ
+    BOX6: Комплексна перевірка і програмування обладнання ГМЗЛБ
+    BOX7: Монтаж засобів зв'язку і електрорадіонавігаційного обладнання ГМЗЛБ
+    BOX8: Ремонт і модернізація засобів зв'язку і навігаційного обладнання
+    BOX9: Пусконалагоджувальні роботи на обладнанні зв'язку, електронавігації, ГМССБ
+    BOX10: Берегове технічне обслуговування обладнання ГМЗЛБ
+    BOX11: Комісійні випробування апаратури ГМЗЛБ і систем супутникового зв'язку
+    BOX12: Гарантійне і сервісне обслуговування радіо- і радіонавігаційного обладнання
+  BOTTOM:
+    NAME: ООО «Елком»
+    ADDRESS: 87517, Україна, Маріуполь, вул. Червономаяцька, д.2

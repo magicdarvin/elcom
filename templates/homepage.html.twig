@@ -1,10 +1,16 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+
+
+<div class="container-fluid">
 <div class="certified-agent">
   <div class="container">
   <ul>
-    <li>Certified Agent</li>
+    <li>{{ "TOP.CERTIFIEDAGENT"|t}}</li>
     <li><a href="http://furuno.com" target="_blank"><img style="height:14px;" src="{{ url('theme://images/logos/furuno.png') }}"></a></li>
     <li><a href="https://www.kelvinhughes.com" target="_blank"><img style="height:56px;" src="{{ url('theme://images/logos/kelvin_h.png') }}"></a></li>
     <li><a href="http://www.jotron.com" target="_blank"><img style="height:42px;" src="{{ url('theme://images/logos/jotron.png') }}"></a></li>
@@ -16,7 +22,7 @@
 
 <div class="homepage-vertical">
 <div class="homepage-center-title text-center animated fadeInUp">
-  <span class="">Ship Communication & Navigation Equipment</span>
+  <span class="">{{ "TITLE.CENTERED"|t}}</span>
 </div>
 
 <div class="homepage-grid-wrapper">
@@ -25,58 +31,59 @@
 <div class="homepage-grid hvr-fade">
     <div class="col-lg-2">
       <div class="cell">
-        <p>Поставка и реализация оборудования ГМССБ, средств связи и электрорадионавигационного оборудования</p>
+        <p>{{ "BOXES.BOX1"|t }}</p>
       </div>
     </div>
     <div class="col-lg-2">
       <div class="cell">
-        <p>Разработка проектно-конструкторской документации при ремонте судов</p>
+        <p>{{ "BOXES.BOX2"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Техническая экспертиза судов и других плавучих средств</p>
+        <p>{{ "BOXES.BOX3"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Оказание консалтинговых услуг</p>
+        <p>{{ "BOXES.BOX4"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Монтаж средств связи и электрорадионавигационного оборудования ГМССБ</p>
+        <p>{{ "BOXES.BOX5"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Пусконаладочные работы на оборудовании связи, электронавигации, ГМССБ</p>
+        <p>{{ "BOXES.BOX6"|t }}</p>
       </div>
     </div>
 
     <div class="col-lg-2">
       <div class="cell">
-        <p>Комиссионные испытания аппаратуры ГМССБ и систем спутниковой связи</p>
+        <p>{{ "BOXES.BOX7"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Гарантийное и сервисное обслуживание радио- и радионавигационного оборудования</p>
+        <p>{{ "BOXES.BOX8"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Береговое техническое обслуживание оборудования ГМССБ</p>
+        <p>{{ "BOXES.BOX9"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Комплексная проверка и программирование оборудования ГМССБ</p>
+        <p>{{ "BOXES.BOX10"|t }}</p>
       </div>
     </div><div class="col-lg-2">
       <div class="cell">
-        <p>Комплексная проверка и программирование аварийных радиобуев КОСПАС/САРСАТ</p>
+        <p>{{ "BOXES.BOX11"|t }}</p>
       </div>
     </div>
     <div class="col-lg-2">
       <div class="cell">
-        <p>Ремонт и модернизация средств связи и навигационного оборудования</p>
+        <p>{{ "BOXES.BOX12"|t }}</p>
       </div>
     </div>
 </div>
+<div class="homepage-more-mobile visible-xs visible-sm">Подробнее о всём</div>
 </a>
 </div>
 
@@ -86,4 +93,65 @@
       <div><img class="" src="{{ url('theme://images/cover-furuno.jpg') }}"></div>
   </div>
 </div>
+</div>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script>
+var number = 0 + Math.floor(Math.random() * 3);
+
+$(".homepage-cover-image").slick({
+  accessibility: false,
+  draggable: false,
+  swipe: false,
+  touchMove: false,
+
+  autoplay: true,
+  arrows: false,
+  autoplaySpeed: 4000,
+  fade: true,
+  speed: 800,
+
+  responsive: [{
+
+    breakpoint: 600,
+    settings: {
+      initialSlide: (number),
+      autoplay: false,
+    }
+
+  }]
+
+});</script>
+<script>$(".homepage-grid").slick({
+
+  slidesToShow: 6,
+  slidesToScroll: 6,
+  arrows: true,
+  appendArrows: $(".homepage-grid-wrapper"),
+  rows: 2,
+
+  responsive: [{
+
+  breakpoint: 1200,
+  settings: {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    infinite: false
+  }
+
+},
+{
+
+  breakpoint: 750,
+
+  settings: {
+    arrows: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  }
+}]
+
+});
+</script>
+
 {% endblock %}
