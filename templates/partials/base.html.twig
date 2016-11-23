@@ -55,7 +55,6 @@
                     <img src="{{ url('theme://images/elcom.png') }}" alt="{{ config.site.title }}">
                   </a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
@@ -111,7 +110,7 @@
           <li><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> +38(0629)41-35-07</li>
           <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> +38(050)594-83-15</li>
           <div class="clearfix hidden-sm"></div>
-          <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Обратная связь</li>
+          <li><a href="mailto:elcom@mp.farlep.net"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{ "TOP.MAILUS"|t }}</a></li>
         </ul>
       </div>
       <div>
@@ -128,6 +127,7 @@
       <div class="footer-name-address">
         <ul>
         <li>{{ "BOTTOM.NAME"|t}}</li>
+        <div class="clearfix visible-xs"></div>
         <li>{{ "BOTTOM.ADDRESS"|t}}</li>
       </ul>
       </div>
